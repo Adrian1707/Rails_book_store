@@ -17,10 +17,10 @@ describe Author do
 
 	describe "#full_name" do 
 		
-		it 'returns the full name of the author' do 
-			author = Fabricate(:author, first_name: "John", last_name: "Bull")
-			expect(author.full_name).to eq("John Bull") 
-		end
+	it 'returns the full name of the author' do 
+		author = Fabricate(:author, first_name: "John", last_name: "Bull")
+		expect(author.full_name).to eq("John Bull") 
+	end
 
 	end 
 end 
