@@ -9,4 +9,8 @@ class AuthorsController < ApplicationController
 		# require 'pry';binding.pry
 	end 
 
+	def new 
+		@author = Author.new 
+	end 
+
 end
