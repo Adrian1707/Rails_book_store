@@ -153,7 +153,7 @@ describe AuthorsController do
 	end 
 
 	describe "DELETE #destroy" do 
-		let(:author) { Fabricate(:author)}
+		let(:author) { Fabricate(:author) }
 
 		it 'deletes the author with the given id' do 
 			delete :destroy, id: author
