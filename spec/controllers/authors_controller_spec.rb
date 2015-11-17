@@ -131,6 +131,23 @@ describe AuthorsController do
 		end
 
 		context 'unsuccessful update' do 
+			let(:author) { Fabricate(:author, first_name: "Paul")}
+
+				before do 
+				put :update, author: Fabricate.attributes_for(:author, first_name: ""), id: author.id
+			end 
+			
+			it 'does not update the modified author object' do 
+ 				expect(Author.first.first_name).to eq("Paul")
+			end
+
+			it 'render the edit template' do 
+				expect(response).to render_template :edit
+			end 
+
+			it 'sets danger update flash message' do 
+				expect(flash[:danger]).to eq("Author has not been updated")
+			end 
 
 		end   
 	end 
