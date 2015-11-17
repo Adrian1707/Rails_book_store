@@ -107,5 +107,33 @@ describe AuthorsController do
 
 	end 
 
+	describe 'PUT #update' do 
+
+		context 'successful update' do 
+			let(:author) { Fabricate(:author) }
+
+			before do 
+				put :update, author: Fabricate.attributes_for(:author, first_name: "Paul"), id: author.id
+			end 
+
+			it 'updates modified author object' do
+				expect(Author.first.first_name).to eq("Paul")
+			end
+
+			it 'redirect to show action page' do 
+				expect(response).to redirect_to author_path(Author.first)
+			end 
+
+			it 'sets successful update flash message' do 
+				expect(flash[:success]).to eq("Author has been updated")
+			end 
+
+		end
+
+		context 'unsuccessful update' do 
+
+		end   
+	end 
+
 
 end 
