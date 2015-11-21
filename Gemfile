@@ -30,6 +30,7 @@ group :development do
   gem 'spring'
   gem 'pry'
   gem 'pry-nav'
+  gem 'thin', '1.6.2'
 end
 
 group :test do 
